@@ -7,7 +7,7 @@ addons:
 
 before_script:
   - "export DISPLAY=:99"
-  - /etc/init.d/xvfb start
+  - "sh -e /etc/init.d/xvfb start"
 
 script:
   - type chrome
