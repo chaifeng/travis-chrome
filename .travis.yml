@@ -8,7 +8,7 @@ addons:
 before_script:
   - "export DISPLAY=:99"
   - "sh -e /etc/init.d/xvfb start"
-  - apt-get install -y chromium-browser
+  - sudo apt-get install -y chromium-browser
 
 script:
   - google-chrome-stable --version
