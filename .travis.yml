@@ -3,8 +3,11 @@ dist: trusty
 language: python
 python: "2.7"
 
-addons:
-  chrome: stable
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install -y mysql-server mysql-client
 
 before_script:
   - "export DISPLAY=:99"
@@ -12,5 +15,4 @@ before_script:
   - sudo apt-get install -y chromium-browser
 
 script:
-  - google-chrome-stable --version
   - chromium-browser --version
