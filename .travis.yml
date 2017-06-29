@@ -16,3 +16,4 @@ before_script:
 
 script:
   - chromium-browser --version
+  - ls -l /usr/bin/*chrome* /usr/bin/chromium* || true
