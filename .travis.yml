@@ -15,5 +15,7 @@ before_script:
   - sudo apt-get install -y chromium-browser
 
 script:
-  - chromium-browser --version
+  - id
+  - google-chrome-stable --version || true
+  - chromium-browser --version || true
   - ls -l /usr/bin/*chrome* /usr/bin/chromium* || true
