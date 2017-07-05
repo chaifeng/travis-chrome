@@ -3,19 +3,8 @@ dist: trusty
 language: python
 python: "2.7"
 
-before_install:
-  - sudo apt-get update -qq
-
-install:
-  - sudo apt-get install -y mysql-server-5.6 mysql-client-5.6
-
-before_script:
-  - "export DISPLAY=:99"
-  - "sh -e /etc/init.d/xvfb start"
-  - sudo apt-get install -y chromium-browser
-
 script:
-  - id
-  - google-chrome-stable --version || true
-  - chromium-browser --version || true
-  - ls -l /usr/bin/*chrome* /usr/bin/chromium* || true
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  - sudo apt-get update
+  - sudo apt-get install -y google-chrome-stable
